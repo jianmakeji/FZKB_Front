@@ -1,0 +1,225 @@
+# MTL Exporter v1.0 by Seungwoo Oh at CLO - Virtual Fashion Inc.
+newmtl Material3831
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.050000 0.050000 0.050000
+Ns 10.000000
+illum 2
+d 1.000000
+newmtl Material3698
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 2.000000
+illum 2
+d 1.000000
+map_d C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/eye_light.png
+newmtl Material3707
+Ka 0.231000 0.231000 0.231000
+Kd 0.745098 0.745098 0.745098
+Ks 0.000000 0.000000 0.000000
+Ns 100.000000
+illum 2
+d 1.000000
+map_Kd C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_eye.jpg
+map_Ka C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_eye.jpg
+newmtl Material3711
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ns 2.000000
+illum 2
+d 1.000000
+map_d C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/eye_light.png
+newmtl Material3821
+Ka 0.400000 0.400000 0.400000
+Kd 0.745098 0.745098 0.745098
+Ks 0.024800 0.024800 0.024800
+Ns 10.000000
+illum 2
+d 1.000000
+map_Kd C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_face.jpg
+map_Ka C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_face.jpg
+newmtl Material3837
+Ka 0.000000 0.000000 0.000000
+Kd 0.500000 0.500000 0.500000
+Ks 0.000000 0.000000 0.000000
+Ns 2.000000
+illum 2
+d 1.000000
+map_d C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/transparency.png
+newmtl Material3829
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.050000 0.050000 0.050000
+Ns 20.000000
+illum 2
+d 1.000000
+newmtl Material3833
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.000000 0.000000 0.000000
+Ns 20.000000
+illum 2
+d 1.000000
+newmtl Material3843
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.050000 0.050000 0.050000
+Ns 20.000000
+illum 2
+d 1.000000
+newmtl Material3816
+Ka 0.400000 0.400000 0.400000
+Kd 0.745098 0.745098 0.745098
+Ks 0.025000 0.025000 0.025000
+Ns 10.000000
+illum 2
+d 1.000000
+map_Kd C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_body_east_underwear.jpg
+map_Ka C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_body_east_underwear.jpg
+newmtl Material3845
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.050000 0.050000 0.050000
+Ns 10.000000
+illum 2
+d 1.000000
+newmtl Material3847
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.000000 0.000000 0.000000
+Ns 20.000000
+illum 2
+d 1.000000
+newmtl Material3849
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material3693
+Ka 0.231000 0.231000 0.231000
+Kd 0.745098 0.745098 0.745098
+Ks 0.000000 0.000000 0.000000
+Ns 100.000000
+illum 2
+d 1.000000
+map_Kd C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_eye.jpg
+map_Ka C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_eye.jpg
+newmtl Material3835
+Ka 0.000000 0.000000 0.000000
+Kd 0.004000 0.004000 0.004000
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material3811
+Ka 0.400000 0.400000 0.400000
+Kd 0.745098 0.745098 0.745098
+Ks 0.025000 0.025000 0.025000
+Ns 10.000000
+illum 2
+d 1.000000
+map_Kd C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_leg_hand.jpg
+map_Ka C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_leg_hand.jpg
+newmtl Material3682
+Ka 0.000000 0.000000 0.000000
+Kd 0.745098 0.745098 0.745098
+Ks 0.200000 0.200000 0.200000
+Ns 40.000000
+illum 2
+d 1.000000
+map_Kd C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_hair.png
+map_d C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_hair.png
+map_Ka C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/M_hair.png
+newmtl Material3851
+Ka 0.000000 0.000000 0.000000
+Kd 0.500000 0.500000 0.500000
+Ks 0.000000 0.000000 0.000000
+Ns 2.000000
+illum 2
+d 1.000000
+map_d C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/transparency.png
+newmtl Material3675
+Ka 0.000000 0.000000 0.000000
+Kd 0.500000 0.500000 0.500000
+Ks 0.000000 0.000000 0.000000
+Ns 2.000000
+illum 2
+d 1.000000
+map_d C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1063/transparency.png
+newmtl Material3655
+Ka 0.000000 0.000000 0.000000
+Kd 0.031052 0.002976 0.005463
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material3665
+Ka 0.000000 0.000000 0.000000
+Kd 0.031052 0.002976 0.005463
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material3670
+Ka 0.000000 0.000000 0.000000
+Kd 0.031052 0.002976 0.005463
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material3660
+Ka 0.000000 0.000000 0.000000
+Kd 0.031052 0.002976 0.005463
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material4329
+Ka 0.257132 0.257132 0.257132
+Kd 0.819608 0.819608 0.819608
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material4319
+Ka 0.257132 0.257132 0.257132
+Kd 0.819608 0.819608 0.819608
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material5512
+Ka 0.257132 0.257132 0.257132
+Kd 0.819608 0.819608 0.819608
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material5508
+Ka 0.044291 0.044291 0.044291
+Kd 0.141176 0.141176 0.141176
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+newmtl Material5516
+Ka 0.257132 0.257132 0.257132
+Kd 0.819608 0.819608 0.819608
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+map_Ks C:/Users/wez/AppData/Local/CLO/Marvelous Designer 6 Enterprise OnlineAuth/14776/1072/Œ¢–≈Õº∆¨_20170915153641.jpg
+newmtl Material8075
+Ka 0.257132 0.257132 0.257132
+Kd 1.000000 1.000000 1.000000
+Ks 0.000000 0.000000 0.000000
+Ns 5.000000
+illum 2
+d 1.000000
+map_Ka zhibu_R209_G209_B209.png
+map_Kd zhibu_R209_G209_B209.png

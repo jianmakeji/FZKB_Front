@@ -41,27 +41,53 @@ $(document).ready(function() {
 		};
 
 		var loader = new THREE.FBXLoader(manager);
-
-		loader.load('models/fbx/body.fbx', function(object) {
+		var texture = new THREE.Texture();
+		var tLoader = new THREE.ImageLoader(manager);
+		var imageUrl = "img/5_9.jpg";
+		tLoader.load(imageUrl, function(image) {
+			texture.image = image;
+			texture.needsUpdate = true;
+			texture.wrapS = THREE.RepeatWrapping;
+			texture.wrapT = THREE.RepeatWrapping;
+			texture.repeat.set(1, 1);
+		});
+		
+		loader.load('models/fbx/body4.fbx', function(object) {
 
 			scene.add(object);
 			
 			//加载裤装模型
-			loader.load('models/fbx/trousers.fbx', function(object) {
+			loader.load('models/fbx/kuzi.fbx', function(object) {
 				trouserObject = object; //裤装
 				scene.add(object);
+				trouserObject.traverse(function(child) {
+					if(child instanceof THREE.Mesh) {
+						child.material.map = texture;
+					}
+				});
+				
 			}, onProgress, onError);
 			
 			//加载内衣模型
-			loader.load('models/fbx/underwear.fbx', function(object) {
+			loader.load('models/fbx/neida.fbx', function(object) {
 				underwearObject = object;
 				scene.add(object);
+				underwearObject.traverse(function(child) {
+					if(child instanceof THREE.Mesh) {
+						child.material.map = texture;
+					}
+				});
 			}, onProgress, onError);
 	
 			//加载外套模型
-			loader.load('models/fbx/greatcoat.fbx', function(object) {
+			loader.load('models/fbx/xizhuang.fbx', function(object) {
 				overcoatObject = object; //外套
 				scene.add(object);
+				overcoatObject.traverse(function(child) {
+					if(child instanceof THREE.Mesh) {
+						child.material.map = texture;
+					}
+				});
 			}, onProgress, onError);
 
 		}, onProgress, onError);
@@ -78,12 +104,12 @@ $(document).ready(function() {
 
 		window.addEventListener('resize', onWindowResize, false);
 
-		light = new THREE.HemisphereLight(0xffffff, 0x333333, 2.0);
-		light.position.set(0, 1, 0);
+		light = new THREE.HemisphereLight(0xffffff, 0x333333, 1.0);
+		light.position.set(0, 1, 3);
 		scene.add(light);
-
+		
 		light = new THREE.DirectionalLight(0xffffff, 1.0);
-		light.position.set(0, 1, 0);
+		light.position.set(0, 1, -3);
 		scene.add(light);
 
 		animate();

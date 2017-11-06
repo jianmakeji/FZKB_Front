@@ -253,6 +253,7 @@ $(document).ready(function() {
 
 	$(".element").click(function() {
 
+		var radioVal = $('input[name="clothingGroup"]:checked').val();
 		var texture = new THREE.Texture();
 		var tLoader = new THREE.ImageLoader(manager);
 
@@ -260,82 +261,82 @@ $(document).ready(function() {
 		tLoader.load(imageUrl, function(image) {
 			texture.image = image;
 			texture.needsUpdate = true;
-
 			texture.wrapS = THREE.RepeatWrapping;
 			texture.wrapT = THREE.RepeatWrapping;
 			texture.repeat.set(1, 1);
 
+			if(radioVal == 0) { //内搭
+				underwearObject.traverse(function(child) {
+					if(child instanceof THREE.Mesh) {
+						child.material.map = texture;
+					}
+				});
+				underwear = imageUrl;
+			} else if(radioVal == 1) { //外套
+				overcoatObject.traverse(function(child) {
+					if(child instanceof THREE.Mesh) {
+						child.material.map = texture;
+					}
+				});
+				greatcoat = imageUrl;
+			} else if(radioVal == 2) { //裤装
+				console.log("============1" + trouserObject);
+				console.log("============2" + texture);
+				trouserObject.traverse(function(child) {
+					console.log("============3");
+					if(child instanceof THREE.Mesh) {
+						child.material.map = texture;
+						console.log("============4");
+					}
+				});
+				trousers = imageUrl;
+			}
 		});
-
-		var radioVal = $('input[name="clothingGroup"]:checked').val();
-		if(radioVal == 0) { //内搭
-			underwearObject.traverse(function(child) {
-				if(child instanceof THREE.Mesh) {
-					child.material.map = texture;
-				}
-			});
-			underwear = imageUrl;
-		} else if(radioVal == 1) { //外套
-			overcoatObject.traverse(function(child) {
-				if(child instanceof THREE.Mesh) {
-					child.material.map = texture;
-				}
-			});
-			greatcoat = imageUrl;
-		} else if(radioVal == 2) { //裤装
-			trouserObject.traverse(function(child) {
-				if(child instanceof THREE.Mesh) {
-					child.material.map = texture;
-				}
-			});
-			trousers = imageUrl;
-		}
 
 	});
 
 	$("#saveMatchBtn").click(function() {
 		var name = $("#matchName").val();
-		if (name == null || name =="" ){
+		if(name == null || name == "") {
 			Materialize.toast('请输入名称!', 4000);
 			return;
 		}
-		
-		if (underwear == null || underwear == ""){
+
+		if(underwear == null || underwear == "") {
 			Materialize.toast('选择内衣贴图!', 4000);
 			return;
 		}
-		
-		if (greatcoat == null || greatcoat == ""){
+
+		if(greatcoat == null || greatcoat == "") {
 			Materialize.toast('请外套名称!', 4000);
 			return;
 		}
-		
-		if (trousers == null || trousers == ""){
+
+		if(trousers == null || trousers == "") {
 			Materialize.toast('请裤装名称!', 4000);
 			return;
 		}
-		
-		
+
 	});
-	
-	$("#resetBtn").click(function(){
-		
+
+	$("#resetBtn").click(function() {
+
 		$("#matchName").val("");
-		
+
 		underwearObject.traverse(function(child) {
 			if(child instanceof THREE.Mesh) {
 				child.material.map = null;
 			}
 		});
 		underwear = "";
-		
+
 		overcoatObject.traverse(function(child) {
 			if(child instanceof THREE.Mesh) {
 				child.material.map = null;
 			}
 		});
 		greatcoat = "";
-		
+
 		trouserObject.traverse(function(child) {
 			if(child instanceof THREE.Mesh) {
 				child.material.map = null;
