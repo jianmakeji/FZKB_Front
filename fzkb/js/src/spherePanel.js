@@ -320,23 +320,34 @@ $(document).ready(function() {
 
 		$("#matchName").val("");
 
+		var texture = new THREE.Texture();
+		var tLoader = new THREE.ImageLoader(manager);
+		var imageUrl = "img/5_9.jpg";
+		tLoader.load(imageUrl, function(image) {
+			texture.image = image;
+			texture.needsUpdate = true;
+			texture.wrapS = THREE.RepeatWrapping;
+			texture.wrapT = THREE.RepeatWrapping;
+			texture.repeat.set(1, 1);
+		});
+		
 		underwearObject.traverse(function(child) {
 			if(child instanceof THREE.Mesh) {
-				child.material.map = null;
+				child.material.map = texture;
 			}
 		});
 		underwear = "";
 
 		overcoatObject.traverse(function(child) {
 			if(child instanceof THREE.Mesh) {
-				child.material.map = null;
+				child.material.map = texture;
 			}
 		});
 		greatcoat = "";
 
 		trouserObject.traverse(function(child) {
 			if(child instanceof THREE.Mesh) {
-				child.material.map = null;
+				child.material.map = texture;
 			}
 		});
 		trousers = imageUrl;
