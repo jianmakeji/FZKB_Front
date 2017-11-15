@@ -17,9 +17,11 @@ $(document).ready(function() {
 		$("#modelContainer").append(container);
 		camera = new THREE.PerspectiveCamera(45, window.innerWidth * 0.6 / window.innerHeight, 1, 2000);
 		scene = new THREE.Scene();
+		//scene.fog = THREE.FogExp2(0xffffff,0.02);
 		// grid
-		var gridHelper = new THREE.GridHelper(28, 28, 0x303030, 0x303030);
+		var gridHelper = new THREE.GridHelper(45, 45, 0x9e9e9e, 0x9e9e9e);
 		gridHelper.position.set(0, 0, 0);
+		gridHelper.receiveShadow = true;
 		scene.add(gridHelper);
 		// stats
 		stats = new Stats();
@@ -55,7 +57,7 @@ $(document).ready(function() {
 		loader.load('models/fbx/body4.fbx', function(object) {
 
 			scene.add(object);
-			
+			//object.castShadow = true;
 			//加载裤装模型
 			loader.load('models/fbx/kuzi.fbx', function(object) {
 				trouserObject = object; //裤装
@@ -65,6 +67,7 @@ $(document).ready(function() {
 						child.material.map = texture;
 					}
 				});
+				
 				
 			}, onProgress, onError);
 			
@@ -111,7 +114,8 @@ $(document).ready(function() {
 		light = new THREE.DirectionalLight(0xffffff, 1.0);
 		light.position.set(0, 1, -3);
 		scene.add(light);
-
+		light.castShadow = true
+		
 		animate();
 	}
 
@@ -133,6 +137,8 @@ $(document).ready(function() {
 	}
 
 	function render() {
+		renderer.setClearColor(0xdcdcdc);
+		//renderer.shadowMap.enabled = true;
 		renderer.render(scene, camera);
 	}
 });

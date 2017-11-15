@@ -244,6 +244,7 @@ $(document).ready(function() {
 	}
 
 	function render() {
+		//renderer.setClearColor(0xdcdcdc);
 		renderer.render(scene, camera);
 	}
 
@@ -280,13 +281,9 @@ $(document).ready(function() {
 				});
 				greatcoat = imageUrl;
 			} else if(radioVal == 2) { //裤装
-				console.log("============1" + trouserObject);
-				console.log("============2" + texture);
 				trouserObject.traverse(function(child) {
-					console.log("============3");
 					if(child instanceof THREE.Mesh) {
 						child.material.map = texture;
-						console.log("============4");
 					}
 				});
 				trousers = imageUrl;

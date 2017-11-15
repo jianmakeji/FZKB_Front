@@ -5,5 +5,27 @@
 		<title></title>
 	</head>
 	<body>
+		<div id="example">
+		  <my-component></my-component>
+		</div>
+		
+		<div id="example-2">
+		  <simple-counter></simple-counter>
+		  <simple-counter></simple-counter>
+		  <simple-counter></simple-counter>
+		</div>
 	</body>
+	<script type="text/x-template" id="head-template">
+  		<button v-on:click="counter += 1">{{ counter }}</button>
+	</script>
+	<script type="text/javascript" src="js/lib/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="js/lib/vue.min.js" ></script>
+	<script type="text/javascript" src="js/src/head.js"></script>
+	<script type="text/javascript">
+		new Vue({
+		  el: '#example'
+		})
+		
+		
+	</script>
 </html>
