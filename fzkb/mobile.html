@@ -23,27 +23,27 @@
 			}
 			
 			.swiper-container {
-				width: 60%;
-				padding-top: 30px;
+				width: 90%;
+				padding-top: 15px;
 				padding-bottom: 50px;
 			}
 			
 			.swiper-slide {
 				background-position: center;
 				background-size: cover;
-				width: 200px;
-				height: 200px;
+				width: 100px;
+				height: 100px;
 			}
 			
 			#matchNameLabel {
 				position: relative;
-				left: 30px;
+				left: 10px;
 			}
 			
 			#matchName {
-				width: 130px;
+				width: 110px;
 				position: relative;
-				left: 30px;
+				left: 10px;
 				color: white;
 			}
 			
@@ -65,9 +65,8 @@
 				background-color: rgba(0, 255, 255, 0.75);
 			}
 			
-			.selectArea a {
-				position: relative;
-				left: 40px;
+			.btnClass{
+				text-align: center;
 			}
 		</style>
 	</head>
@@ -90,11 +89,12 @@
 			<label id="matchNameLabel" for="matchName">搭配名称:</label>
 			<input id="matchName" type="text" class="validate">
 
+			
+		</div>
+		<div class="btnClass">
 			<a class="waves-effect waves-light btn" id="saveMatchBtn">保存搭配</a>
-
 			<a class="waves-effect waves-light btn" id="resetBtn">重&nbsp;&nbsp;&nbsp;&nbsp;置</a>
 		</div>
-
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide" style="background-image:url(img/1_1.jpg)"></div>
@@ -106,6 +106,24 @@
 				<div class="swiper-slide" style="background-image:url(img/1_7.jpg)"></div>
 				<div class="swiper-slide" style="background-image:url(img/1_8.jpg)"></div>
 				<div class="swiper-slide" style="background-image:url(img/1_9.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_1.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_2.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_3.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_4.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_5.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_6.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_7.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_8.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/2_9.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_1.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_2.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_3.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_4.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_5.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_6.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_7.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_8.jpg)"></div>
+				<div class="swiper-slide" style="background-image:url(img/3_9.jpg)"></div>
 			</div>
 			<!-- Add Pagination 
         <div class="swiper-pagination"></div>-->
@@ -144,6 +162,114 @@
 					modifier: 1,
 					slideShadows: true
 				}
+			});
+			
+			var underwear;
+			var greatcoat;
+			var trousers;
+
+			$(document).ready(function(){
+				$(".swiper-slide").click(function(){
+					var radioVal = $('input[name="clothingGroup"]:checked').val();
+					var urlStr = $(this).css('background-image');
+					var imageUrl = urlStr.substring(4,urlStr.length - 1);
+					
+					var texture = new THREE.Texture();
+					var tLoader = new THREE.ImageLoader(manager);
+			
+					tLoader.load(imageUrl, function(image) {
+						texture.image = image;
+						texture.needsUpdate = true;
+						texture.wrapS = THREE.RepeatWrapping;
+						texture.wrapT = THREE.RepeatWrapping;
+						texture.repeat.set(1, 1);
+			
+						if(radioVal == 0) { //内搭
+							underwearObject.traverse(function(child) {
+								if(child instanceof THREE.Mesh) {
+									child.material.map = texture;
+								}
+							});
+							underwear = imageUrl;
+						} else if(radioVal == 1) { //外套
+							overcoatObject.traverse(function(child) {
+								if(child instanceof THREE.Mesh) {
+									child.material.map = texture;
+								}
+							});
+							greatcoat = imageUrl;
+						} else if(radioVal == 2) { //裤装
+							trouserObject.traverse(function(child) {
+								if(child instanceof THREE.Mesh) {
+									child.material.map = texture;
+								}
+							});
+							trousers = imageUrl;
+						}
+					});
+				});
+				
+				$("#resetBtn").click(function() {
+
+					$("#matchName").val("");
+			
+					var texture = new THREE.Texture();
+					var tLoader = new THREE.ImageLoader(manager);
+					var imageUrl = "img/5_9.jpg";
+					tLoader.load(imageUrl, function(image) {
+						texture.image = image;
+						texture.needsUpdate = true;
+						texture.wrapS = THREE.RepeatWrapping;
+						texture.wrapT = THREE.RepeatWrapping;
+						texture.repeat.set(1, 1);
+					});
+					
+					underwearObject.traverse(function(child) {
+						if(child instanceof THREE.Mesh) {
+							child.material.map = texture;
+						}
+					});
+					underwear = "";
+			
+					overcoatObject.traverse(function(child) {
+						if(child instanceof THREE.Mesh) {
+							child.material.map = texture;
+						}
+					});
+					greatcoat = "";
+			
+					trouserObject.traverse(function(child) {
+						if(child instanceof THREE.Mesh) {
+							child.material.map = texture;
+						}
+					});
+					trousers = imageUrl;
+				});
+				
+				$("#saveMatchBtn").click(function() {
+					var name = $("#matchName").val();
+					if(name == null || name == "") {
+						Materialize.toast('请输入名称!', 4000);
+						return;
+					}
+			
+					if(underwear == null || underwear == "") {
+						Materialize.toast('选择内衣贴图!', 4000);
+						return;
+					}
+			
+					if(greatcoat == null || greatcoat == "") {
+						Materialize.toast('请外套名称!', 4000);
+						return;
+					}
+			
+					if(trousers == null || trousers == "") {
+						Materialize.toast('请裤装名称!', 4000);
+						return;
+					}
+			
+				});
+				
 			});
 		</script>
 	</body>
